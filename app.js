@@ -25,6 +25,7 @@ const changeTurn  =() =>{
     if((boxtext [e[0]].innerText ===  boxtext[e[1]].innerText)  && (boxtext[e[2]].innerText === boxtext[e[1]].innerText)  && (boxtext[e[0]].innerText !== "") ){
       document.querySelector('.info').innerText = boxtext[e[0]].innerText + "Won"
       isgameOver = true;
+        disableBoxes();
     }
     })
   
@@ -59,4 +60,11 @@ reset.addEventListener('click' , ()=> {
     document.getElementsByClassName("info")[0].innerText = "Turn For" +  turn;
   
 })
+
+function disableBoxes() {
+  document.querySelectorAll('.box').forEach(box => {
+    box.style.pointerEvents = 'none'; // Disable box clicks
+    box.style.opacity = '0.5'; // Optional: make disabled boxes look faded
+  });
+}
 
