@@ -23,9 +23,9 @@ const changeTurn  =() =>{
     ]
     wins.forEach(e => {
     if((boxtext [e[0]].innerText ===  boxtext[e[1]].innerText)  && (boxtext[e[2]].innerText === boxtext[e[1]].innerText)  && (boxtext[e[0]].innerText !== "") ){
-      document.querySelector('.info').innerText = boxtext[e[0]].innerText + "Won"
+      document.querySelector('.info').innerText = boxtext[e[0]].innerText + "Won";
       isgameOver = true;
-        disableBoxes();
+      disableBoxes();
     }
     })
   
@@ -67,4 +67,3 @@ function disableBoxes() {
     box.style.opacity = '0.5'; // Optional: make disabled boxes look faded
   });
 }
-
